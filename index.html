@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DrugWatch KZ - Интерактивная карта</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="logo.png" alt="DrugWatch KZ Logo" />
+        <div class="logo-text">
+          <h1>DrugWatch KZ</h1>
+          <span>Видеть. Отмечать. Предотвращать.</span>
+        </div>
+      </div>
+
+      <!-- ==== НАВИГАЦИЯ ==== -->
+      <nav class="nav">
+        <a href="index.html" class="active">Карта</a>
+        <a href="stats.html">Статистика</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <aside class="sidebar">
+      <h3>Фильтры</h3>
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" id="filter-dealer" value="dealer" checked />
+          <span class="pin-icon blue"></span> Наркозакладчики
+        </label>
+        <label>
+          <input type="checkbox" id="filter-graffiti" value="graffiti" checked />
+          <span class="pin-icon yellow"></span> Наркограффити
+        </label>
+        <label>
+          <input type="checkbox" id="filter-den" value="den" checked />
+          <span class="pin-icon red"></span> Наркопритоны
+        </label>
+      </div>
+
+      <div id="incident-info" class="incident-info-panel">
+        <h4>Информация об инциденте</h4>
+        <p class="placeholder">Нажмите на метку, чтобы увидеть детали.</p>
+        <div class="details" style="display: none;">
+          <p><strong>Тип:</strong> <span id="info-type"></span></p>
+          <p><strong>Адрес:</strong> <span id="info-address"></span></p>
+          <p><strong>Описание:</strong> <span id="info-description"></span></p>
+          <p><strong>Статус:</strong> <span id="info-status"></span></p>
+          <hr />
+          <p><strong>Дата:</strong> <span id="info-date"></span></p>
+          <p><strong>КУИ:</strong> <span id="info-kui"></span></p>
+          <p><strong>ЕРДР:</strong> <span id="info-erdr"></span></p>
+        </div>
+      </div>
+    </aside>
+
+    <div id="map"></div>
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+  <script src="app.js"></script>
+
+  <!-- ==== Плавающие кнопки ботов ==== -->
+  <div class="bot-buttons">
+    <a href="http://t.me/DrugWatch_KZ_bot" target="_blank" class="bot-btn tg" title="Сообщить в Telegram">
+      <img src="https://cdn.freelance.ru/images/att/1840377_900_600.png" alt="Telegram Bot" />
+    </a>
+
+    <div class="bot-btn wa" title="WhatsApp-бот (в разработке)">
+      <img src="https://avatars.mds.yandex.net/i?id=15376be8098a100acf914ba45bf9ed7b_l-12604309-images-thumbs&n=13" alt="WhatsApp Bot" />
+    </div>
+  </div>
+</body>
+</html>

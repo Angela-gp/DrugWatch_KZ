@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DrugWatch KZ — Видеть. Отмечать. Предотвращать.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="welcome.css" />
+</head>
+<body>
+  <!-- ==== ФОН ==== -->
+  <div id="background">
+    <div class="bg-slide active" style="background-image:url('https://adindex.ru/assets/seo/2021_05/facebook_293925.jpg?ts=1621352447')"></div>
+    <div class="bg-slide" style="background-image:url('https://avatars.mds.yandex.net/get-altay/2068435/2a0000016dbc10b81a787fbaccdb072c2410/orig')"></div>
+    <div class="bg-slide" style="background-image:url('https://i.ytimg.com/vi/EQQJeP6gyH0/maxresdefault.jpg')"></div>
+    <div class="bg-slide" style="background-image:url('https://avatars.mds.yandex.net/i?id=f64e0cabe33643f3f30bfa63b765b133_l-5266118-images-thumbs&n=13')"></div>
+  </div>
+  <div class="overlay"></div>
+
+  <!-- ==== ГЛАВНЫЙ ЭКРАН ==== -->
+  <section class="content">
+    <div class="logo-frame">
+      <img src="logo.png" alt="DrugWatch KZ" class="logo" />
+    </div>
+    <h1 class="title">DrugWatch KZ</h1>
+    <p class="subtitle">Видеть • Отмечать • Предотвращать</p>
+
+    <p class="intro">
+      Национальная система общественного мониторинга<br>
+      правонарушений и общественной безопасности.
+    </p>
+
+    <a href="index.html" class="btn">Перейти на сайт</a>
+    <div class="scroll-hint">↓ Пролистайте вниз</div>
+  </section>
+
+  <!-- ==== ИНФОРМАЦИОННЫЕ БЛОКИ ==== -->
+  <section class="info-section">
+    <div class="info-container">
+      <div class="info-card">
+        <h3>О проекте</h3>
+        <p>DrugWatch KZ — инновационная система мониторинга и реагирования, созданная для предотвращения незаконного оборота веществ и укрепления общественной безопасности.</p>
+      </div>
+      <div class="info-card">
+        <h3>Миссия</h3>
+        <p>Создание прозрачной экосистемы гражданского участия, где каждый человек может внести вклад в защиту общества и молодёжи.</p>
+      </div>
+      <div class="info-card">
+        <h3>Инструменты</h3>
+        <p>Телеграм-бот для сообщений, аналитическая панель, интерактивная карта и автоматическая фильтрация данных для служб.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 DrugWatch KZ — Национальная система общественного мониторинга</footer>
+
+  <script>
+    // Смена фонов каждые 5 секунд
+    const slides = document.querySelectorAll('.bg-slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
